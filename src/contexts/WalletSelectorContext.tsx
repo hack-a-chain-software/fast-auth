@@ -5,6 +5,7 @@ import type { WalletSelectorModal } from "@near-wallet-selector/modal-ui";
 import { setupModal } from "@near-wallet-selector/modal-ui";
 import { setupNearWallet } from "@near-wallet-selector/near-wallet";
 import { setupMyNearWallet } from "@near-wallet-selector/my-near-wallet";
+import { setupFastAuthWallet } from 'near-fastauth-wallet';
 import type { ReactNode } from "react";
 import React, {
   useCallback,
@@ -47,6 +48,10 @@ export const WalletSelectorContextProvider: React.FC<{
       network: "testnet",
       debug: true,
       modules: [
+        setupFastAuthWallet({
+          relayerUrl: "http://localhost:3030",
+          walletUrl: "https://signer-app-lna2uofrnq-uc.a.run.app/login"
+        }),
         setupMyNearWallet(),
         setupNearWallet(),
         setupMeteorWallet(),
