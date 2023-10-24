@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useReducer } from 'react';
 import { useWallet } from '@/stores/wallet';
 
 export const Index = () => {
@@ -16,15 +16,25 @@ export const Index = () => {
   }, [initWallet]);
 
 	return (
-    <div
-      className="bg-black h-screen w-screen flex items-center justify-center"
-    >
-      <button
-        onClick={() => toggleModal()}
-        className="bg-white rounded-[8px] px-3 py-4 hover:opacity-80"
+    <div>
+
+      <div
+        className="bg-black h-screen w-screen flex items-center justify-center"
       >
-        Connect Wallet
-      </button>
+        <button
+          onClick={() => toggleModal()}
+          className="bg-white rounded-[8px] px-3 py-4 hover:opacity-80"
+        >
+          Connect Wallet
+        </button>
+      </div>
+
+      <div>
+        <input
+          type="text"
+          className="border-2 border-black"
+        />
+      </div>
     </div>
 	);
 };

@@ -50,7 +50,7 @@ export const WalletSelectorContextProvider: React.FC<{
       modules: [
         setupFastAuthWallet({
           relayerUrl: "http://localhost:3030",
-          walletUrl: "https://signer-app-lna2uofrnq-uc.a.run.app/login"
+          walletUrl: "https://signer-app-lna2uofrnq-uc.a.run.app"
         }),
         setupMyNearWallet(),
         setupNearWallet(),
